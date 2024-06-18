@@ -1,0 +1,25 @@
+.button {
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 10px 25px;
+    color: var(--button-text);
+    background-color: var(--light-color);
+    border: none;
+    border-radius: 6px;
+    transition: opacity 0.2s ease;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:focus-visible {
+        opacity: 0.8;
+    }
+
+    @media(hover: hover) {
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}

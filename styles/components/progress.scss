@@ -1,0 +1,37 @@
+.progress {
+  --progress: 1; // прогресс в процентах
+  --circle-width: 175.84; // длина окружности на радиус 28
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 64px;
+  height: 64px;
+  
+  &__item {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+  }
+
+  &__inner-round {
+    stroke: rgba(255, 255, 255, 0.5);
+  }
+  
+  &__round {
+    stroke: var(--light-color);
+    stroke-dasharray: var(--circle-width); 
+    stroke-dashoffset: calc(var(--circle-width) - var(--circle-width) * var(--progress) / 100);
+  }
+
+  &__count {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    line-height: 30px;
+    color: var(--light-color);
+  }
+}
